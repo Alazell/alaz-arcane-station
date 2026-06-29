@@ -17,7 +17,7 @@
     radius: 1.5
     energy: 1.6
     color: "#FF69B4"
-    
+
 - type: entity
   parent: VendingMachine
   id: VendingMachineLove
@@ -56,3 +56,35 @@
     defaultPrice: 35
     extraPrice: 100
   # Orion-Edit-End
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineUndiesMate
+  name: UndiesMate
+  description: A vending machine stocked with underwear clothes.
+  components:
+  - type: VendingMachine
+    pack: UndiesMateInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    denyState: deny-unshaded
+  - type: SpeakOnUIClosed
+    pack: GenericVendGoodbyes
+  - type: Sprite
+    sprite: _Arcane/Structures/Machines/VendingMachines/undiemate.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#CB8CFF"
+  - type: VendingMachinePricing
+    defaultPrice: 35
+    extraPrice: 100
